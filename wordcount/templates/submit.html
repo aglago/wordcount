@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: #dfe3ee;
+        }
+
+        h1 {
+            color: #000080;
+        }
+
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 400px;
+            width: 620px;
+            padding: 10px;
+            {% comment %} display: flex;
+            align-items: center;
+            justify-content: center; {% endcomment %}
+        }
+
+        textarea {
+            border: 1px solid black;
+        }
+
+        .submitbtn {
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            background-color: #000080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <h1> Input your text here </h1>
+
+        <!--Form to take the text to be counted-->
+        <form method='POST' action='counter'>
+            {% csrf_token %}
+            <textarea name='text' rows='18' cols='80'></textarea> <br><br>
+            <input type='submit' width='65px' height='30px' class='submitbtn'>
+        </form>
+    </div>
+</body>
+<html>
+
+
+<!--Attributes: method, action: where we want the data to be sent to-->
+
+<!--
+    method
+        -> GET: for less sensitive informations because they will be displayed in the browser URL
+        -> POST: for more safe information because it will not display in the browser
+            -> CSRF TOKEN: Cross Site Reference Forgery
+-->
+
+  <!--
+        -> text acts as a variable that stores the text coming from the form (text area) after submit is pressed
+        -> we want the text to be redirected to another page (url)
+        -> setting action to 'count' will send the information to the count view
+        -> now in the count view, 
+    -->
