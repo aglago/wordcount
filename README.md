@@ -1,4 +1,4 @@
-# Word count project
+# WORDCOUNT PROJECT
 
 Learning Backend development with Django (Python), this is my first project.
 
